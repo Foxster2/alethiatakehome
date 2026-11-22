@@ -36,12 +36,12 @@ CONF = 0.4
 # with no extra flags, so these defaults ARE the submitted configuration.
 # Measured on a T4 against every-frame FP32 references:
 #   2-video set : half -> identical scores, 2.2x faster
-#   9-video devset (595 s): stride 3 + half -> F1 0.985, exact 0.958,
-#                           within-1 0.998, 5.5x faster than the baseline
-#                           (stride 4 was 19% faster but with slightly
-#                           smaller margins; stride 3 chosen for safety)
+#   9-video devset (595 s): stride 4 + half -> F1 0.985, exact 0.955,
+#                           within-1 0.995, 6.5x faster than the baseline
+# Stride 4 confirmed with the RTX 4090 stride sweep (sweep.py: random
+# 90 s windows of many unseen videos, bootstrap over videos).
 # The exact baseline (graders' method) is: --stride 1 --no-half
-DEFAULT_STRIDE = 3     # 1 = every frame; 3 = frames 0, 3, 6, ... of each second
+DEFAULT_STRIDE = 4     # 1 = every frame; 4 = frames 0, 4, 8, ... of each second
 DEFAULT_HALF = True    # True = FP16 inference on the GPU
 DEFAULT_BATCH = 32     # frames sent to the GPU at once (does not change results)
 
