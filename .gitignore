@@ -17,3 +17,7 @@ venv/
 *.onnx
 .DS_Store
 Thumbs.db
+
+results.jsonl.gz
+sweep_report.txt
+speed_report.txt
