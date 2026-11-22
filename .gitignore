@@ -1,23 +1,13 @@
-finevideo/
-*.parquet
-*.mp4
-*.pt
-*.engine
-results.jsonl
-sweep_log.jsonl
-__pycache__/
-.venv/
-venv/
+# Ignore everything...
+*
 
-.env
-.env.*
-*.log
-*.safetensors
-*.ckpt
-*.onnx
-.DS_Store
-Thumbs.db
-
-results.jsonl.gz
-sweep_report.txt
-speed_report.txt
+# ...except the files the brief requires
+!.gitignore
+!run.py
+!requirements.txt
+!README.md
+!results.jsonl.gz
+!HARDWARE.md
+!WRITEUP.md
+!ai_chats/
+!ai_chats/**
